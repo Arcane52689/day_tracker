@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Please click <a href="<%= "#{root_url}/users/#{@user.id}/confirmation?token=#{@user.confirmation_token}"%>">here</a> to confirm your acount, or copy the link below
+
+    <br>
+    <%= "#{root_url}/users/#{@user.id}/confirmation?token=#{@user.confirmation_token}"%>
+  </body>
+</html>
