@@ -5,6 +5,12 @@ Rails.application.routes.draw do
 
   #User Methods
 
-  get 'users/:id/confirmation', to: 'users#confirmation'
+  get 'users/:id/confirmation', to: 'users#confirmation', as: :confirm_user
+  get 'users/confirmation_required', to: 'users#confirmation_required', as: :confirmation_required
 
+  namespace :api, defaults: {format: :json} do
+
+    resources :users, only: [:show]
+    post 'users/:id/resend_confirmation', to: 'users#resend_confirmation'
+  end
 end
